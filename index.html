@@ -1324,6 +1324,36 @@ rt{font-size:.5em;font-weight:700;letter-spacing:0;line-height:1}
 .ttc.add{color:#6b5a40}
 .ckintro .ckic{width:90px;height:90px}
 .ckintro .sub{line-height:1.7}
+/* ==== 見やすさ（文字のコントラスト） ==== */
+#misBtn{background:#fbf5e8!important}
+@supports (background:color-mix(in srgb,red 50%,white)){ #misBtn{background:color-mix(in srgb,var(--cc,#c23b3b) 9%,#fffdf6)!important} }
+#misBtn .mtx{font-size:1.02rem!important;white-space:normal!important;line-height:1.45;color:#1f1a14!important;overflow:visible!important;text-overflow:clip!important}
+#misBtn .mlab{color:#a3262b!important}
+#misBtn .mrew{color:#5a4000!important}
+#misBtn .mbar{background:#e9e1d0!important}
+.hbar.cls{background:#efe6d2}
+@supports (background:color-mix(in srgb,red 50%,white)){ .hbar.cls{background:color-mix(in srgb,var(--c) 15%,#fff)} }
+.wkb{background:#5b3fd6!important;color:#fff!important}
+.hgo{background:#c45f00!important}
+.oglab{background:#1f6e42!important;color:#fff!important}
+.htab span{text-shadow:0 1px 2px rgba(0,0,0,.55)}
+.ctab small{filter:brightness(.72)}
+.btn.fill{text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.need{color:#b5361f}
+/* 明るいカード（ダークモードでも明るいまま）の中の文字は こい色に */
+.bigbtn small,.candy .sub,.candy .cnum{color:#5f513a!important}
+.wkbox{background:#fffaf0!important;border-radius:12px;padding:8px 10px!important}
+.nest.shegg b,.nest.shegg .sub{color:#2a241c!important}
+.bigbtn b,.candy b,.candy .cdt b{color:#2a241c!important}
+.wkbox,.wkbox b,.wkbox span,.wkbox small{color:#2a241c!important}
+.wkbox .sub{color:#5f513a!important}
+.orbc{color:#2a241c!important}
+.coinget{color:#6b4f00}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .rh{color:#f2c86a} :root:not([data-theme="light"]) .coinget{color:#f2c86a} :root:not([data-theme="light"]) .need{color:#ff9a8a} :root:not([data-theme="light"]) .progx span{color:#1f1a14} :root:not([data-theme="light"]) .progx{background:rgba(255,255,255,.55)} }
+:root[data-theme="dark"] .rh,:root[data-theme="dark"] .coinget{color:#f2c86a}
+:root[data-theme="dark"] .need{color:#ff9a8a}
+:root[data-theme="dark"] .progx span{color:#1f1a14}
+:root[data-theme="dark"] .progx{background:rgba(255,255,255,.55)}
 /* ==== 絵のアイコン ==== */
 .ici{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
 .pgi:has(.ici),.bgi:has(.ici),.mic:has(.ici){background:transparent!important;box-shadow:none!important}
