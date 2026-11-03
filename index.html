@@ -1433,19 +1433,133 @@ rt{font-size:.5em;font-weight:700;letter-spacing:0;line-height:1}
 :root[data-theme="dark"] .ysetup .sub{color:#d6ccb8}
 @media (prefers-color-scheme:dark){
  :root:not([data-theme="light"]) .recb small,:root:not([data-theme="light"]) .recb small .fr{color:#6f6555!important}
- :root:not([data-theme="light"]) .mcs .sub,:root:not([data-theme="light"]) .mcs .sub .fr{color:#6f6555!important}
- :root:not([data-theme="light"]) .msort button[aria-pressed="true"],:root:not([data-theme="light"]) .mfil button[aria-pressed="true"],:root:not([data-theme="light"]) .bcats button[aria-pressed="true"],:root:not([data-theme="light"]) .bcats button[aria-pressed="true"] small{color:#1a1714!important}
+ :root:not([data-theme="light"]) .mcs .sub,:root:not([data-theme="light"]) .mcs .sub .fr{color:#4a4033!important}
+ :root:not([data-theme="light"]) .msort button[aria-pressed="true"],:root:not([data-theme="light"]) .mfil button[aria-pressed="true"],:root:not([data-theme="light"]) .bcats button[aria-pressed="true"],:root:not([data-theme="light"]) .bcats button[aria-pressed="true"] small{color:#fff!important}
  :root:not([data-theme="light"]) .unsure,:root:not([data-theme="light"]) .unsure .fr{color:#ffd36a!important}
  :root:not([data-theme="light"]) .unsure.on,:root:not([data-theme="light"]) .unsure.on .fr{color:#5a4000!important}
 }
 :root[data-theme="dark"] .recb small,:root[data-theme="dark"] .recb small .fr{color:#6f6555!important}
-:root[data-theme="dark"] .mcs .sub,:root[data-theme="dark"] .mcs .sub .fr{color:#6f6555!important}
-:root[data-theme="dark"] .msort button[aria-pressed="true"],:root[data-theme="dark"] .mfil button[aria-pressed="true"],:root[data-theme="dark"] .bcats button[aria-pressed="true"],:root[data-theme="dark"] .bcats button[aria-pressed="true"] small{color:#1a1714!important}
+:root[data-theme="dark"] .mcs .sub,:root[data-theme="dark"] .mcs .sub .fr{color:#4a4033!important}
+:root[data-theme="dark"] .msort button[aria-pressed="true"],:root[data-theme="dark"] .mfil button[aria-pressed="true"],:root[data-theme="dark"] .bcats button[aria-pressed="true"],:root[data-theme="dark"] .bcats button[aria-pressed="true"] small{color:#fff!important}
 :root[data-theme="dark"] .unsure,:root[data-theme="dark"] .unsure .fr{color:#ffd36a!important}
 :root[data-theme="dark"] .unsure.on,:root[data-theme="dark"] .unsure.on .fr{color:#5a4000!important}
 .mfil button small{font-size:.75rem!important;color:inherit!important;opacity:.85}
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .ucell.unk img,:root:not([data-theme="light"]) .nest.lock img{filter:brightness(0) invert(.9)!important;opacity:.28!important} }
 :root[data-theme="dark"] .ucell.unk img,:root[data-theme="dark"] .nest.lock img{filter:brightness(0) invert(.9)!important;opacity:.28!important}
+
+.rolebox .rolei{width:min(40vw,150px)}
+.rolebtns{display:flex;flex-direction:column;gap:8px;width:100%}
+.rolebtns .btn{padding:12px;font-size:1.05rem;display:flex;flex-direction:column;align-items:center;gap:2px}
+.rolebtns .btn small{font-size:.78rem;font-weight:500;opacity:.92}
+.rolebtns .btn.rsub{--c:#1f7a4c}
+.rolerep{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}
+.rolerep .swapi img{width:70px;height:70px}
+.evroad{display:block;font-weight:800;font-size:1.05rem;color:var(--ink)}
+
+/* ==== 見やすさ（v61） ==== */
+:root:not([data-theme="dark"]){--muted:#5c5244}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--muted:#c4b9a4}}
+:root[data-theme="dark"]{--muted:#c4b9a4}
+/* 色ボタンは 少しこく（黄・オレンジは 茶色の字のまま） */
+.btn.fill{background:color-mix(in srgb,var(--c) 80%,#000);border-color:color-mix(in srgb,var(--c) 80%,#000)}
+[style*="--ki)"] .btn.fill,.btn.fill[style*="--ki)"],[style*="#d9a400"] .btn.fill,[style*="--daidai)"] .btn.fill,.btn.fill[style*="--daidai)"],[style*="#ee7d1e"] .btn.fill,[style*="#c99a0e"] .btn.fill,[style*="#d8a800"] .btn.fill{background:var(--c);border-color:var(--c);color:#2a1d00!important;text-shadow:none!important}
+.seg button[aria-pressed="true"],.mfil button[aria-pressed="true"],.bcats button[aria-pressed="true"]{background:color-mix(in srgb,var(--c,var(--accent)) 78%,#000)!important;border-color:transparent;color:#fff!important}
+.bcats button[aria-pressed="true"]{background:color-mix(in srgb,var(--accent) 78%,#000)!important}
+#ubMode button[aria-pressed="true"]{background:#c99a0e!important;color:#2a1d00!important}
+.htab{opacity:1!important}
+.htab:not(.on){filter:saturate(.75)}
+.htab[data-ht="um"],.htab[data-ht="set"],.htab[data-ht="play"]{background:color-mix(in srgb,var(--bc) 78%,#000)!important}
+.ftab.on{background:#1f7a46}
+.ftab em{background:#b5361f!important;color:#fff!important}
+.kl.k-l{background:#8a6400}
+.kl.k-s{text-shadow:0 0 3px #000,0 0 2px #000}
+.plab,.cpsubs .plab{background:color-mix(in srgb,var(--pc,#888) 68%,#000)!important}
+.hgo{background:#9a4800!important}
+.cxp{color:color-mix(in srgb,var(--cc) 55%,#000)!important}
+.mgop{color:color-mix(in srgb,var(--c) 65%,#000)}
+.mycard .sub,.mycard .sub .fr,.mycard small{color:#4a4033}
+.mcfl{color:#6b4f00!important}
+.mct{color:#5a4200!important}
+.lbc.sp small{color:#5a4500!important}
+.hint5 .sub,.hint5 .sub .fr{color:#5a4500!important}
+.ctab small{filter:none!important;color:color-mix(in srgb,var(--c) 62%,#000)!important}
+.hbar.cls em{color:color-mix(in srgb,var(--c,#2f6fd0) 70%,#000)}
+.hosu small{color:#7a4a00!important}
+.karuta .done{color:#1f6b40}
+.nest.special b{color:color-mix(in srgb,var(--c) 70%,#000)}
+.evonew{color:color-mix(in srgb,var(--c) 72%,#000)}
+.mcard.m-ura small,.mcard.m-ura .sub{color:#eef0ff!important}
+@media (prefers-color-scheme:dark){
+
+ :root:not([data-theme="light"]) .btn.fill{background:color-mix(in srgb,var(--c) 66%,#000);border-color:color-mix(in srgb,var(--c) 66%,#000)}
+ :root:not([data-theme="light"]) .seg button[aria-pressed="true"],:root:not([data-theme="light"]) .mfil button[aria-pressed="true"],:root:not([data-theme="light"]) .bcats button[aria-pressed="true"]{background:color-mix(in srgb,var(--c,var(--accent)) 62%,#000)!important}
+ :root:not([data-theme="light"]) .bcats button[aria-pressed="true"]{background:color-mix(in srgb,var(--accent) 62%,#000)!important}
+ :root:not([data-theme="light"]) .tuinfo{background:var(--surface-2)!important;color:var(--ink)}
+ :root:not([data-theme="light"]) .swapi.mgrp{background:linear-gradient(160deg,var(--surface-2),color-mix(in srgb,var(--c) 22%,var(--surface-2)))!important}
+ :root:not([data-theme="light"]) .mgop{color:color-mix(in srgb,var(--c) 55%,#fff)}
+ :root:not([data-theme="light"]) .nest.shegg{background:linear-gradient(160deg,var(--surface),#4a3d12)!important}
+ :root:not([data-theme="light"]) .nest.shegg b,:root:not([data-theme="light"]) .nest.shegg .sub{color:var(--ink)!important}
+ :root:not([data-theme="light"]) .lbst{color:#ff8a7a!important;border-color:#ff8a7a!important;background:rgba(0,0,0,.35)!important}
+ :root:not([data-theme="light"]) .lvbig{color:#ffd54a!important;text-shadow:none!important}
+ :root:not([data-theme="light"]) .pbar .num,:root:not([data-theme="light"]) .pbar .num .fr{color:color-mix(in srgb,var(--c) 50%,#fff)!important}
+ :root:not([data-theme="light"]) .karuta .qlab,:root:not([data-theme="light"]) .karuta .qlab .fr,:root:not([data-theme="light"]) .karuta .hint{color:color-mix(in srgb,var(--c) 45%,#fff)}
+ :root:not([data-theme="light"]) .karuta{color:var(--ink)}
+ :root:not([data-theme="light"]) .nest.special b{color:color-mix(in srgb,var(--c) 50%,#fff)}
+ :root:not([data-theme="light"]) .evonew{color:color-mix(in srgb,var(--c) 55%,#fff)}
+ :root:not([data-theme="light"]) .ctab small{color:color-mix(in srgb,var(--c) 55%,#fff)!important}
+ :root:not([data-theme="light"]) .hbar.cls em{color:color-mix(in srgb,var(--c,#2f6fd0) 50%,#fff)}
+ :root:not([data-theme="light"]) [style*="color:#b5361f"]{color:#ff8a7a!important;border-color:#ff8a7a!important}
+ :root:not([data-theme="light"]) .mcard.m-tai small,:root:not([data-theme="light"]) .mcard.m-tai .sub{color:var(--muted)}
+
+}
+
+ :root[data-theme="dark"] .btn.fill{background:color-mix(in srgb,var(--c) 66%,#000);border-color:color-mix(in srgb,var(--c) 66%,#000)}
+ :root[data-theme="dark"] .seg button[aria-pressed="true"],:root[data-theme="dark"] .mfil button[aria-pressed="true"],:root[data-theme="dark"] .bcats button[aria-pressed="true"]{background:color-mix(in srgb,var(--c,var(--accent)) 62%,#000)!important}
+ :root[data-theme="dark"] .bcats button[aria-pressed="true"]{background:color-mix(in srgb,var(--accent) 62%,#000)!important}
+ :root[data-theme="dark"] .tuinfo{background:var(--surface-2)!important;color:var(--ink)}
+ :root[data-theme="dark"] .swapi.mgrp{background:linear-gradient(160deg,var(--surface-2),color-mix(in srgb,var(--c) 22%,var(--surface-2)))!important}
+ :root[data-theme="dark"] .mgop{color:color-mix(in srgb,var(--c) 55%,#fff)}
+ :root[data-theme="dark"] .nest.shegg{background:linear-gradient(160deg,var(--surface),#4a3d12)!important}
+ :root[data-theme="dark"] .nest.shegg b,:root[data-theme="dark"] .nest.shegg .sub{color:var(--ink)!important}
+ :root[data-theme="dark"] .lbst{color:#ff8a7a!important;border-color:#ff8a7a!important;background:rgba(0,0,0,.35)!important}
+ :root[data-theme="dark"] .lvbig{color:#ffd54a!important;text-shadow:none!important}
+ :root[data-theme="dark"] .pbar .num,:root[data-theme="dark"] .pbar .num .fr{color:color-mix(in srgb,var(--c) 50%,#fff)!important}
+ :root[data-theme="dark"] .karuta .qlab,:root[data-theme="dark"] .karuta .qlab .fr,:root[data-theme="dark"] .karuta .hint{color:color-mix(in srgb,var(--c) 45%,#fff)}
+ :root[data-theme="dark"] .karuta{color:var(--ink)}
+ :root[data-theme="dark"] .nest.special b{color:color-mix(in srgb,var(--c) 50%,#fff)}
+ :root[data-theme="dark"] .evonew{color:color-mix(in srgb,var(--c) 55%,#fff)}
+ :root[data-theme="dark"] .ctab small{color:color-mix(in srgb,var(--c) 55%,#fff)!important}
+ :root[data-theme="dark"] .hbar.cls em{color:color-mix(in srgb,var(--c,#2f6fd0) 50%,#fff)}
+ :root[data-theme="dark"] [style*="color:#b5361f"]{color:#ff8a7a!important;border-color:#ff8a7a!important}
+ :root[data-theme="dark"] .mcard.m-tai small,:root[data-theme="dark"] .mcard.m-tai .sub{color:var(--muted)}
+
+
+/* v61b */
+.kl.k-s{background:linear-gradient(90deg,#b32d2d,#a85a00,#1f7a46,#1f62a8,#7a2fb0)!important}
+.plab,.cpsubs .plab{color:#fff!important}
+.nest.special .sub b{color:color-mix(in srgb,var(--c) 60%,#000)!important}
+.mycard .sub,.mycard .sub .fr,.mycard small,.mycard .sub ruby{color:#4a4033!important}
+.mcard small,.mcard .sub,.mcard .sub .fr,.mcard small .fr{color:#4a4033!important}
+.mcard.m-ura small,.mcard.m-ura .sub,.mcard.m-ura small .fr{color:#eef0ff!important}
+.kmcnt span{color:#2a241c}
+.kmcnt b{color:color-mix(in srgb,var(--c) 75%,#000)}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme="light"]) [style*="--ki)"] .btn.fill,:root:not([data-theme="light"]) .btn.fill[style*="--ki)"],:root:not([data-theme="light"]) [style*="#d9a400"] .btn.fill,:root:not([data-theme="light"]) [style*="--daidai)"] .btn.fill,:root:not([data-theme="light"]) .btn.fill[style*="--daidai)"],:root:not([data-theme="light"]) [style*="#ee7d1e"] .btn.fill,:root:not([data-theme="light"]) [style*="#c99a0e"] .btn.fill,:root:not([data-theme="light"]) [style*="#d8a800"] .btn.fill{background:var(--c)!important;border-color:var(--c)!important;color:#2a1d00!important}
+ :root:not([data-theme="light"]) .nest.special .sub b{color:color-mix(in srgb,var(--c) 50%,#fff)!important}
+ :root:not([data-theme="light"]) .karuta .done,:root:not([data-theme="light"]) .karuta .done .fr{color:#6fcf98!important}
+ :root:not([data-theme="light"]) .hbar.cls em{color:color-mix(in srgb,var(--c,#2f6fd0) 75%,#000)!important}
+ :root:not([data-theme="light"]) .rate button,:root:not([data-theme="light"]) .rate button .fr,:root:not([data-theme="light"]) .rate button .re{color:#1a1714!important;text-shadow:none!important}
+ :root:not([data-theme="light"]) .mcard.m-tai small,:root:not([data-theme="light"]) .mcard.m-tai .sub{color:#4a4033!important}
+}
+ :root[data-theme="dark"] [style*="--ki)"] .btn.fill,:root[data-theme="dark"] .btn.fill[style*="--ki)"],:root[data-theme="dark"] [style*="#d9a400"] .btn.fill,:root[data-theme="dark"] [style*="--daidai)"] .btn.fill,:root[data-theme="dark"] .btn.fill[style*="--daidai)"],:root[data-theme="dark"] [style*="#ee7d1e"] .btn.fill,:root[data-theme="dark"] [style*="#c99a0e"] .btn.fill,:root[data-theme="dark"] [style*="#d8a800"] .btn.fill{background:var(--c)!important;border-color:var(--c)!important;color:#2a1d00!important}
+ :root[data-theme="dark"] .nest.special .sub b{color:color-mix(in srgb,var(--c) 50%,#fff)!important}
+ :root[data-theme="dark"] .karuta .done,:root[data-theme="dark"] .karuta .done .fr{color:#6fcf98!important}
+ :root[data-theme="dark"] .hbar.cls em{color:color-mix(in srgb,var(--c,#2f6fd0) 75%,#000)!important}
+ :root[data-theme="dark"] .rate button,:root[data-theme="dark"] .rate button .fr,:root[data-theme="dark"] .rate button .re{color:#1a1714!important;text-shadow:none!important}
+ :root[data-theme="dark"] .mcard.m-tai small,:root[data-theme="dark"] .mcard.m-tai .sub{color:#4a4033!important}
+.mcard.m-ta small,.mcard.m-ta .sub,.mcard.m-ta small .fr,.mcard.m-ta .sub .fr{color:#f2e9d8!important}
+#pseat.seatscroll{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;align-content:flex-start}
+#pseat.seatscroll::after{content:'';flex-basis:100%;height:4px}
 </style>
 
 <!-- トップ（つくえ） -->
@@ -1540,7 +1654,7 @@ rt{font-size:.5em;font-weight:700;letter-spacing:0;line-height:1}
 <!-- うたもん図鑑 -->
 <div id="ubook" class="play scene" hidden>
   <div class="pbar" style="--c:var(--accent)"><div class="in"><button class="back" type="button" data-home>← もどる</button><h2>うたもん図鑑</h2><span class="num" id="ubCount"></span></div></div>
-  <div class="in bookin"><section class="card2"><h2>わたしのうたもん</h2><p class="sub">同じしゅるいのうたもんも、1ぴきずつ べつべつに育ちます。同じしゅるいが2ひき以上いると「×2」のように まとまるので、タップして ひらいてね。うたもんをタップすると パートナーにできます。</p><div id="ubMine" class="umines"></div></section><section class="card2"><div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h2 style="margin:0">うたもん図鑑</h2><div class="seg" id="ubMode" role="group" aria-label="色" style="--c:#c99a0e"></div></div><p class="sub">色ちがいは、たまごがかえるとき たまに生まれる、とくべつな色のうたもん（8こに1こくらい。ふしぎなたまごは3こに1こくらい）。色ちがいが出ないまま7こかえすと、8こ目はかならず色ちがい！ 見つけたしゅるいは「✦色ちがい」で見られます。</p><p class="shleft" id="shLeft"></p></section><div id="ubList"></div></div>
+  <div class="in bookin"><section class="card2"><h2>わたしのうたもん</h2><p class="sub">同じしゅるいのうたもんも、1ぴきずつ べつべつに育ちます。同じしゅるいが2ひき以上いると「×2」のように まとまるので、タップして ひらいてね。うたもんをタップすると パートナーにできます。</p><div id="ubMine" class="umines"></div></section><section class="card2"><div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h2 style="margin:0">うたもん図鑑</h2><div class="seg" id="ubMode" role="group" aria-label="色" style="--c:#c99a0e"></div></div><p class="sub">色ちがいは、たまごがかえるとき たまに生まれる、とくべつな色のうたもん（8こに1こくらい。ふしぎなたまごは3こに1こくらい）。色ちがいが出ないまま8こかえすと、森に「きらめきたまご」（かならず色ちがい）が とどく！ 見つけたしゅるいは「✦色ちがい」で見られます。</p><p class="shleft" id="shLeft"></p></section><div id="ubList"></div></div>
 </div>
 
 <!-- ごほうびチェッカー -->
@@ -2253,11 +2367,11 @@ function renderPen(){ let el=$('#aStage > .sub'); if(!el){ el=document.createEle
 function finishTA(){
   stopClock(); const time=Math.round(elapsed()*10)/10; $('#aClock').textContent=time.toFixed(1);
   const key=A.c.k+(A.ura?'_u':''), prev=st.ta[key], rec=prev==null||time<prev; if(rec) st.ta[key]=time;
-  st.taN=(st.taN||0)+1; bump(A.ura?td().uta:td().ta,A.c.k); if(rec) bump(A.ura?td().upb:td().pb,A.c.k); markActive(); addXP(20+(rec&&prev!=null?10:0)); save();
+  st.taN=(st.taN||0)+1; bump(A.ura?td().uta:td().ta,A.c.k); if(rec) bump(A.ura?td().upb:td().pb,A.c.k); markActive(); const fast=time<35; addXP((fast?40:20)+(rec&&prev!=null?10:0)); save();
   const g=TIMES.find(([s])=>st.ta[key]>=s);
   if(rec) snd('up');
   $('#aStage').innerHTML='<div class="result"><p style="margin:0;font-weight:700">ゴール！</p><div class="big">'+fmtT(time)+'</div>'
-    +'<div class="rows">'+(A.pen?'<span>ペナルティ ＋'+A.pen+'秒こみ</span>':'<span>ノーミス！</span>')+'<span>自己ベスト '+fmtT(st.ta[key])+'</span></div>'
+    +'<div class="rows">'+(A.pen?'<span>ペナルティ ＋'+A.pen+'秒こみ</span>':'<span>ノーミス！</span>')+'<span>自己ベスト '+fmtT(st.ta[key])+'</span></div>'+(fast?'<div class="fastb">⚡ はやて ボーナス！ けいけんち 2ばい（＋20）</div>':'<p class="sub">35秒を切ると、けいけんちが 2ばい！</p>')
     +(rec?'<div class="levelup"><b style="font-size:1.4rem">'+(prev==null?'はじめての記録！':'自己ベスト更新！')+'</b>'+(prev!=null?'<span class="sub">'+fmtT(prev)+' → '+fmtT(time)+'</span>':'')+'</div>':'')
     +(g?'<p class="sub">つぎは '+g[0]+'秒切りで「'+(A.ura?g[2]:g[1])+'」</p>':'<p class="sub">さいこうの称号まで とどいたよ！</p>')
     +'<div class="btns" style="width:100%"><button class="btn" type="button" id="taAgain">もう一回</button><button class="btn fill" type="button" id="taHome">もどる</button></div></div>';
@@ -2267,15 +2381,18 @@ function finishTA(){
 
 /* ---------- ごほうびチェッカー ---------- */
 function progInfo(t){ if(st.allT&&(!t.gr||t.gr===curG())) return {earned:true,ratio:1,text:'先生モードで解放'}; const p=t.prog(); const cur=Math.min(p[0],p[1]); return {earned:p[0]>=p[1],ratio:p[1]?cur/p[1]:0,text:p[2]||(Math.min(p[0],p[1])+' / '+p[1])}; }
+function metSp(sp){ const u=um(); return !!(u.given&&u.given[sp]&&SP[sp].kind!=='g')||u.mons.some(m=>m.sp===sp&&!(m.mys&&m.s===0))||u.seen.includes(imgKey(sp,eggKey(sp))); }
+function hideNames(t){ if(!t||st.teach) return t; let r=String(t); const L=GEN.concat(SPECIALS,XSP).filter(sp=>!metSp(sp)).map(sp=>NM[sp]).flatMap(N=>Object.values(N)).filter(x=>x&&x.length>=2).sort((a,b)=>b.length-a.length);
+  L.forEach(n=>{ r=r.split(n).join('？？？'); }); if(!metSp('god')) r=r.split('龍神').join('？？？'); return r; }
 function titleItem(t){ const i=progInfo(t), on=eqList().includes(t.id);
   return '<div class="titem'+(i.earned?' got':'')+(on?' on':'')+' rb'+t.rare+'"'+(i.earned?' role="button" tabindex="0" data-tsel="'+t.id+'"':'')+'>'+(i.earned?titleBanner(t,false,true):'<span class="tb lock"><span class="ti">'+ICON[t.anim]+'</span><span class="tn">？？？</span>'+rareTag(t.rare)+'</span>')
-    +'<span class="sub">'+(t.secret&&!i.earned?'？？？　ひみつの条件':esc(t.desc))+'</span>'+(t.secret&&!i.earned?'':i.earned?(on?'<span class="eqd">つけている（タップで はずす）</span>':'<span class="sub tapnote">タップで つける</span>'):'<div class="bar"><i style="width:'+(i.ratio*100)+'%"></i></div><span class="sub">'+esc(i.text)+'</span>')+'</div>'; }
+    +'<span class="sub">'+(t.secret&&!i.earned?'？？？　ひみつの条件':esc(i.earned?t.desc:hideNames(t.desc)))+'</span>'+(t.secret&&!i.earned?'':i.earned?(on?'<span class="eqd">つけている（タップで はずす）</span>':'<span class="sub tapnote">タップで つける</span>'):'<div class="bar"><i style="width:'+(i.ratio*100)+'%"></i></div><span class="sub">'+esc(i.text)+'</span>')+'</div>'; }
 function renderBook(){ const TV=TL.filter(visT);
   const got=TV.filter(earned).length; $('#bCount').textContent='称号 '+got+' / '+TV.length;
   const eq=eqList().map(id=>TM[id]);
   $('#bEq').innerHTML='<div class="eqs">'+(eq.length?eq.map(t=>'<button type="button" class="eqone" data-tsel="'+t.id+'">'+titleBanner(t,false,true)+'</button>').join(''):'<span class="sub">まだ つけていません</span>')+'</div><p class="sub">'+eq.length+' / '+MAXEQ+'　（称号をタップすると、つける・はずすを選べます）</p>';
   const cand=TV.filter(t=>!earned(t)&&!t.live&&!t.secret).map(t=>({t,i:progInfo(t)})).filter(x=>x.i.ratio>0||['flip','ans','streak','days','mis','combo'].includes(x.t.cat)).sort((a,b)=>b.i.ratio-a.i.ratio).slice(0,3);
-  $('#bNext').innerHTML=cand.length?cand.map(({t,i},n)=>'<div class="nx'+(n===0?' hot':'')+'"><b>'+esc(t.desc)+'</b><div class="bar"><i style="width:'+(i.ratio*100)+'%"></i></div><span class="sub">'+esc(i.text)+'　→ '+RARE[t.rare]+'の称号「？？？」</span></div>').join(''):'<p class="sub">すごい！ ほとんどの称号を手に入れたよ。</p>';
+  $('#bNext').innerHTML=cand.length?cand.map(({t,i},n)=>'<div class="nx'+(n===0?' hot':'')+'"><b>'+esc(hideNames(t.desc))+'</b><div class="bar"><i style="width:'+(i.ratio*100)+'%"></i></div><span class="sub">'+esc(i.text)+'　→ '+RARE[t.rare]+'の称号「？？？」</span></div>').join(''):'<p class="sub">すごい！ ほとんどの称号を手に入れたよ。</p>';
   const cat=st.bcat||'all', own=!!st.bown;
   const cats=[['all','ぜんぶ']].concat(CATS).filter(([c])=>c==='all'||TV.some(t=>t.cat===c));
   $('#bJump').innerHTML='<div class="bcats">'+cats.map(([c,l])=>{ const L=c==='all'?TV:TV.filter(t=>t.cat===c); return '<button type="button" data-bcat="'+c+'" aria-pressed="'+(c===cat)+'">'+esc(l)+'<small>'+L.filter(earned).length+'/'+L.length+'</small></button>'; }).join('')+'</div><label class="bown"><input type="checkbox" data-bown'+(own?' checked':'')+'> もっている称号だけ</label>';
@@ -2658,8 +2775,8 @@ function evoShow(m,from,fromName,fromShiny){ const hatch=m.s===1, sh=m.shiny?' '
     +'<div class="evoimgs"><img class="efrom'+(fromShiny?' '+shc(m.sp):'')+'" src="'+from+'" alt=""><img class="eto'+sh+'" src="'+monImg(m)+'" alt=""><span class="eflash"></span></div>'
     +'<b class="evoname">'+(hatch?'たまごがかえった！':'進化した！')+'</b><span class="evonew">'+esc(monName(m))+'<small>（'+(monKind(m)?monKind(m)+' ':'')+monStage(m)+'）</small></span>'+(hatch&&m.shiny?'<span class="shinytag">✦ 色ちがいだ！ ✦</span>':'')+'</div>'}); runCeleb(); }
 function evoChoice(d,close,it){ const m=it.m, N=NM[m.sp], pre=SP[m.sp].pre;
-  d.innerHTML='<div class="levelup wide evo" style="--c:'+spCol(m.sp)+'"><b style="font-size:1.25rem">'+esc(N.baby)+'が進化する！</b><span class="sub">どっちのすがたに進化させる？（あとから変えられないよ）</span>'
-    +'<div class="evopick">'+['cute','cool'].map(b=>'<button type="button" class="epick" data-br="'+b+'"><img class="'+(shOn(m)?shc(m.sp):'')+'" src="'+UMIMG[pre+'_youth_'+b]+'" alt=""><b>'+esc(N['youth_'+b])+'</b><span class="sub">'+(b==='cute'?'かわいい':'かっこいい')+'</span></button>').join('')+'</div></div>';
+  d.innerHTML='<div class="levelup wide evo" style="--c:'+spCol(m.sp)+'"><b style="font-size:1.25rem">'+esc(N.baby)+'が進化する！</b><span class="sub">どっちの 道で 進化させる？（あとから 変えられないよ）</span>'
+    +'<div class="evopick">'+['cute','cool'].map(b=>'<button type="button" class="epick" data-br="'+b+'"><img class="'+(shOn(m)?shc(m.sp):'')+'" src="'+UMIMG[pre+'_youth_'+b]+'" alt=""><b>'+esc(N['youth_'+b])+'</b><span class="evroad">'+(b==='cute'?'みやびの道':'いさみの道')+'</span><span class="sub">'+(b==='cute'?'やさしく うつくしい':'つよく りりしい')+'</span></button>').join('')+'</div></div>';
   d.addEventListener('click',e=>{ const p=e.target.closest('[data-br]'); if(!p) return; const from=monImg(m), fromName=monName(m); m.br=p.dataset.br; m.pend=false; m.s=2; seeKey(imgKey(m.sp,monKey(m))); save(); close(); evoShow(m,from,fromName,m.shiny); onStage(m); checkEvo(m); }); }
 function onStage(m){ const u=um(), c=SP[m.sp].c;
   if(SP[m.sp].kind==='g'&&m.s===3){
@@ -2697,15 +2814,15 @@ function checkEggs(){ godGold(); if(st.teach) return; const u=um(), lbn=((st.lb|
   const t=Math.floor(lbn/30); if(t>(u.lbt||0)){ const nn=t-(u.lbt||0), bg=bagOf(); bg.g=(bg.g||0)+nn; u.lbt=t; save(); celebrate('<div class="levelup"><img src="'+PIC.candy_g+'" style="width:96px;height:96px" alt=""><b style="font-size:1.2rem">きんのアメを '+nn+'こ ゲット！</b><span class="sub">来た日が合計'+t*30+'日になった！ かばんに 入れたよ</span></div>','title',4200); }
 }
 const SH_RATE=0.12, SH_FUSHIGI=0.35, SH_PITY=8;
-function rollShiny(m){ if(!m.roll) return; delete m.roll; const u=um(); u.dry=u.dry||0; m.shiny=u.dry>=SH_PITY-1||Math.random()<(m.mys?SH_FUSHIGI:SH_RATE); u.dry=m.shiny?0:u.dry+1; }
+function rollShiny(m){ if(!m.roll) return; delete m.roll; const u=um(); u.dry=u.dry||0; m.shiny=Math.random()<(m.mys?SH_FUSHIGI:SH_RATE); u.dry=m.shiny?0:u.dry+1; if(u.dry>=SH_PITY){ u.dry=0; setTimeout(pityGift,1200); } }
+function pityGift(){ const u=um(); if(shPool().length){ u.gifts.push('shegg'); save(); celebrate('<div class="levelup wide legend" style="--c:#c99a0e"><b style="font-size:1.2rem">'+SH_PITY+'こ たまごを かえした！</b><img class="umbig wob" src="'+UMIMG.shegg+'" alt=""><b class="evonew">きらめきたまごが とどいた！</b><span class="sub">かならず 色ちがいが 生まれるよ。うたもんの森の「とどいたもの」で うけとってね</span></div>','legend',6000); } else { u.kakera=(u.kakera||0)+3; save(); celebrate('<div class="levelup wide"><b style="font-size:1.2rem">'+SH_PITY+'こ たまごを かえした！</b><span class="kakera">✦ きらめきのかけら ×3</span><span class="sub">色ちがいは ぜんぶ 見つけているので、かけらを もらったよ</span></div>','title',5000); } renderAny(); }
 const shinyLeft=()=>SH_PITY-(um().dry||0);
 function newMon(sp,opt){ const u=um(), mys=!!(opt&&opt.mys); const m={sp,xp:0,s:0,br:null,born:today(),shiny:false,roll:1}; if(mys) m.mys=1; if(opt&&opt.sh){ m.mys='sh'; m.shiny=true; delete m.roll; }
   if(sp==='god'){ delete m.roll; m.shiny=allShinyOK(); if(m.shiny&&!u.shiny.includes('god')) u.shiny.push('god'); } else seeKey(imgKey(sp,eggKey(sp)));
   u.mons.push(m); const i=u.mons.length-1; save(); snd('up');
-  const cur=u.mons[u.act]; if(cur&&cur.s<3){ save(); celebrate('<div class="levelup" style="--c:'+spCol(sp)+'"><img class="umbig wob" src="'+monImg(m)+'" alt=""><b style="font-size:1.25rem">'+esc(monName(m))+'をむかえた！</b><span class="sub">いまのパートナーが育ったら、交代してね（トップの「パートナー交代」）</span></div>','title',3200); renderAny(); return; }
   if(u.act<0){ u.act=i; save(); celebrate('<div class="levelup" style="--c:'+spCol(sp)+'"><img class="umbig wob" src="'+monImg(m)+'" alt=""><b style="font-size:1.25rem">'+esc(monName(m))+'をむかえた！</b><span class="sub">パートナーになったよ。けいけんちが'+monThr(m)[1]+'たまると うまれるよ</span></div>','title',3600); renderAny(); return; }
-  modal('<div class="levelup wide" style="--c:'+spCol(sp)+'"><img class="umbig wob" src="'+monImg(m)+'" alt=""><b style="font-size:1.25rem">'+esc(monName(m))+'をむかえた！</b><span class="sub">けいけんちは、パートナーだけに入るよ。このたまごをパートナーにする？</span><div class="row2"><button class="btn fill" type="button" data-pnow>パートナーにする</button><button class="btn" type="button" data-mclose>いまのままにする</button></div></div>',
-    (e,d)=>{ if(e.target.closest('[data-pnow]')){ u.act=i; save(); d.remove(); snd('ok'); renderAny(); } });
+  modal('<div class="levelup wide rolebox" style="--c:'+(m.mys?'#8a7ab0':spCol(sp))+'"><img class="umbig wob" src="'+monImg(m)+'" alt=""><b style="font-size:1.25rem">'+esc(monName(m))+'をむかえた！</b><span class="sub">このたまごを どうする？</span><div class="rolebtns"><button class="btn fill" type="button" data-ro="act">⭐ パートナーにする<small>けいけんちが ぜんぶ 入る</small></button><button class="btn fill rsub" type="button" data-ro="sub">🤝 なかまにする<small>けいけんちが 半分 入る（いま '+subIdx().length+'/3）</small></button><button class="btn" type="button" data-mclose>いまは このまま<small>あとで「パートナー・なかま」で えらべるよ</small></button></div></div>',
+    (e,d)=>{ const b=e.target.closest('[data-ro]'); if(!b) return; d.remove(); roleSet(i,b.dataset.ro,()=>renderAny()); });
   renderAny(); }
 
 /* ---------- うたもんの森 ---------- */
@@ -2729,7 +2846,7 @@ function renderForest(){ const u=um(), coin=coinNow(), first=!u.mons.length, lv=
   $('#fCoin').innerHTML='<i class="cicon">う</i>'+coin+(u.tickets?'　<span class="ticket">たまごけん ×'+u.tickets+'</span>':'')+(u.kakera?'　<span class="kakera">✦かけら ×'+u.kakera+'</span>':'')+'　<span class="orbc"><span class="orbi"></span>おぼえ玉 ×'+(st.orb||0)+'</span>';
   const owned=sp=>u.mons.filter(m=>m.sp===sp).length;
   const btn=(sp,coinOnly)=>{ const pr=priceOf(sp); return (first&&!coinOnly)?'<button class="btn fill" type="button" data-buy="'+sp+'">これにする</button>':(u.tickets&&!coinOnly)?'<button class="btn fill" type="button" data-buy="'+sp+'">もらう<small>たまごけん1まい</small></button>':(coinOnly?'<button class="btn fill" type="button" data-buy="'+sp+'"'+(coin<pr?' disabled':'')+'><i class="cicon">う</i> '+pr+'</button>'+'<span class="need">'+(coin<pr?'あと '+(pr-coin):'')+'</span>':(()=>{ const oc=orbCost(sp), h=st.orb||0; return '<button class="btn fill" type="button" data-buy="'+sp+'"'+(h<oc?' disabled':'')+'><span class="orbi"></span> '+oc+'</button><span class="need">'+(h<oc?'あと '+(oc-h)+'こ':'')+'</span>'; })()); };
-  $('#fGifts').innerHTML=u.gifts.length?'<section class="card2"><h2 class="fh">とどいたたまご</h2><div class="fgrid">'+u.gifts.map((sp,i)=>'<div class="nest gift" style="--c:'+spCol(sp)+'"><img class="wob" src="'+UMIMG[imgKey(sp,'legegg')]+'" alt=""><b>'+esc(NM[sp].legegg)+'</b><span class="sub">'+KLAB[SP[sp].kind]+'のたまご</span><button class="btn fill" type="button" data-gift="'+i+'">うけとる</button></div>').join('')+'</div></section>':'';
+  $('#fGifts').innerHTML=u.gifts.length?'<section class="card2"><h2 class="fh">とどいたたまご</h2><div class="fgrid">'+u.gifts.map((sp,i)=>sp==='shegg'?'<div class="nest gift" style="--c:#c99a0e"><img class="wob" src="'+UMIMG.shegg+'" alt=""><b>きらめきたまご</b><span class="sub">かならず 色ちがいが 生まれる たまご</span><button class="btn fill" type="button" data-gift="'+i+'">うけとる</button></div>':'<div class="nest gift" style="--c:'+spCol(sp)+'"><img class="wob" src="'+UMIMG[imgKey(sp,'legegg')]+'" alt=""><b>'+esc(NM[sp].legegg)+'</b><span class="sub">'+KLAB[SP[sp].kind]+'のたまご</span><button class="btn fill" type="button" data-gift="'+i+'">うけとる</button></div>').join('')+'</div></section>':'';
   const bag=bagOf(), canS=u.mons.some(m=>!m.max);
   $('#fSnack').innerHTML='<h2 class="fh">おやつ屋さん（アメ）</h2><p class="sub fsub">買ったアメは「かばん」に入るよ。かばんは「うたもん」の画面にもあるよ。</p><button class="btn fill bagbtn" type="button" data-bag>🎒 かばんを ひらく（アメ '+bagTotal()+'こ）</button><div class="candies">'+CANDY.map(c=>{ const lock=lv<(c.lv||0), n=bag[c.k]||0;
     return '<div class="candy" style="--cc:'+c.col+'"><div class="cdi">'+candySVG(c)+'</div><div class="cdt"><b>'+c.n+'</b><span class="cxp">けいけんち ＋'+c.xp+'</span><span class="sub">かばんに <b class="cnum">'+n+'</b>こ</span></div><div class="cdb">'
@@ -2751,7 +2868,7 @@ $('#forest').addEventListener('click',e=>{ const u=um();
     modal('<div class="levelup wide"><img class="umbig" src="'+UMIMG.shegg+'" alt=""><b>きらめきのかけら3こで「きらめきたまご」と交換する？</b><div class="row2"><button class="btn fill" type="button" data-yes>交換する</button><button class="btn" type="button" data-mclose>やめる</button></div></div>',(ev,d)=>{ if(!ev.target.closest('[data-yes]')) return; d.remove(); u.kakera-=3; newMon(pool[Math.floor(Math.random()*pool.length)],{sh:true}); renderForest(); checkTitles(); }); return; }
   const cb=e.target.closest('[data-cbuy]'); if(cb&&!cb.disabled){ const c=CANDY.find(x=>x.k===cb.dataset.cbuy), n=+cb.dataset.cn, pr=c.pr*n; if(coinNow()<pr) return; st.coin-=pr; const bag=bagOf(); bag[c.k]=(bag[c.k]||0)+n; save(); snd('ok'); toast(c.n+'を '+n+'こ かばんに入れた！'); renderForest(); return; }
   const cg=e.target.closest('[data-cgive]'); if(cg&&!cg.disabled){ candyGive(cg.dataset.cgive); return; }
-  const g=e.target.closest('[data-gift]'); if(g){ const sp=u.gifts.splice(+g.dataset.gift,1)[0]; save(); newMon(sp); renderForest(); return; }
+  const g=e.target.closest('[data-gift]'); if(g){ const sp=u.gifts.splice(+g.dataset.gift,1)[0]; save(); if(sp==='shegg'){ const pool=shPool(); if(pool.length) newMon(pool[Math.floor(Math.random()*pool.length)],{sh:true}); else { u.kakera=(u.kakera||0)+3; save(); toast('きらめきのかけら ×3 を もらったよ'); } renderForest(); checkTitles(); return; } newMon(sp); renderForest(); return; }
   const b=e.target.closest('[data-buy]'); if(!b||b.disabled) return; const sp=b.dataset.buy, sh=sp==='shegg', first=!u.mons.length&&!sh, fu=sp==='fushigi', useT=!sh&&sp!=='kishin'&&!first&&u.tickets>0, pr=priceOf(sp), oc=orbCost(sp);
   const how=first?'さいしょのたまごは むりょうです。':useT?'たまごけんを1まい つかいます。':sh?'うたコインを'+pr+' つかいます。':'おぼえ玉を'+oc+'こ つかいます。';
   modal('<div class="levelup wide"><img class="umbig" src="'+(sh?UMIMG.shegg:fu?UMIMG.mystery:UMIMG[imgKey(sp,eggKey(sp))])+'" alt=""><b style="font-size:1.2rem">'+(sh?'きらめきたまご':fu?'ふしぎなたまご':esc(NM[sp][eggKey(sp)]))+'にする？</b><span class="sub">'+how+'</span><div class="row2"><button class="btn fill" type="button" data-yes>これにする</button><button class="btn" type="button" data-mclose>やめる</button></div></div>',
@@ -2767,30 +2884,30 @@ const ALLIMG=GEN.map(sp=>GKEYS.map(k=>imgKey(sp,k))).concat(SPECIALS.concat(XSP)
 function renderUBook(){ const u=um(); const seenN=ALLIMG.filter(k=>u.seen.includes(k)).length;
   $('#ubCount').textContent='見つけたすがた '+seenN+' / '+ALLIMG.length;
   $('#ubMine').className='mwrap'; $('#ubMine').innerHTML=u.mons.length?monListHTML('ub'):'<p class="sub">まだたまごがありません。うたもんの森でたまごをえらぼう。</p>';
-  $('#shLeft').innerHTML='✦ かならず色ちがいまで あと <b>'+shinyLeft()+'</b>こ（たまごをかえした数）';
+  $('#shLeft').innerHTML='✦ きらめきたまごが とどくまで あと <b>'+shinyLeft()+'</b>こ（たまごを かえした数）';
   const zs=!!st.zshiny; $('#ubMode').innerHTML='<button type="button" data-zs="0" aria-pressed="'+(!zs)+'">ふつうの色</button><button type="button" data-zs="1" aria-pressed="'+zs+'">✦色ちがい（見つけた '+u.shiny.length+'しゅるい）</button>';
-  const cell=(sp,k)=>{ const key=imgKey(sp,k), s=u.seen.includes(key), sh=zs&&u.shiny.includes(sp); if(zs&&!u.shiny.includes(sp)) return '<div class="ucell unk"><img src="'+UMIMG[key]+'" alt=""><span>まだ見つけていない</span></div>'; return '<div class="ucell'+(s?'':' unk')+(sh?' shc':'')+(sp==='god'?' godc':'')+'"><img class="'+(sh?shc(sp):'')+'" src="'+UMIMG[key]+'" alt=""><span>'+(s?esc(NM[sp][k]):'？？？')+'</span></div>'; };
+  const cell=(sp,k)=>{ const key=imgKey(sp,k), s=u.seen.includes(key), sh=zs&&u.shiny.includes(sp); if(zs&&!u.shiny.includes(sp)) return '<div class="ucell unk"><img src="'+UMIMG[key]+'" alt=""><span>まだ見つけていない</span></div>'; return '<div class="ucell'+(s?'':' unk')+(sh&&s?' shc':'')+(sp==='god'&&s?' godc':'')+'"><img class="'+(sh&&s?shc(sp):'')+'" src="'+UMIMG[key]+'" alt=""><span>'+(s?esc(NM[sp][k]):'？？？')+'</span></div>'; };
   const row=sp=>'<div class="urow'+(SP[sp].kind==='g'?'':' lgrow')+'">'+spKeys(sp).map(k=>cell(sp,k)).join('')+'</div>';
   const head=sp=>'<h4>'+(SP[sp].kind==='g'?'':KLAB[SP[sp].kind]+'　')+(u.seen.includes(imgKey(sp,eggKey(sp)))?esc(NM[sp].th):'？？？')+(u.shiny.includes(sp)?' <span class="shinytag s">✦色ちがい発見</span>':'')+(u.mons.some(m=>m.sp===sp&&m.max)?' <span class="crowntag">👑きわめた</span>':'')+'</h4>';
   $('#ubList').innerHTML=COLK.map(k=>'<section class="card2 ucol" style="--c:'+CM[k].c+'"><h3>'+esc(CM[k].name)+'</h3>'+[k,k+'2','L_'+k,'D_'+k].map(sp=>head(sp)+row(sp)).join('')+'</section>').join('')
     +'<section class="card2 ucol" style="--c:#b04dff"><h3>シークレット</h3>'+['sec1','sec2','sec3'].map(sp=>head(sp)+row(sp)).join('')+'</section>'
     +'<section class="card2 ucol" style="--c:#e0531f"><h3>伝説（めちゃつよ）</h3>'+head('kishin')+row('kishin')+'<ul class="ucond"><li>CPU対戦で、5色ぜんぶの めちゃつよに 20枚で勝つ</li><li>どの色も 10枚 覚える</li></ul></section>'
-    +'<section class="card2 ucol" style="--c:#3b3f9a"><h3>伝説（月と風）</h3>'+['hyou','haya'].map(sp=>head(sp)+row(sp)).join('')+'<ul class="ucond"><li><b>月影の黒ヒョウ</b>：'+(u.given.hyou||hyouN()?'5色ぜんぶで 裏1級（いま '+hyouN()+'/5色）':'まだ 手がかりが ない…')+'</li><li><b>はやての大ハヤブサ</b>：'+(u.given.haya||hayaN()?'5色ぜんぶで タイムアタック'+HAYA_T+'秒切り（いま '+hayaN()+'/5色）':'まだ 手がかりが ない…')+'</li></ul></section>'
-    +'<section class="card2 ucol" style="--c:#c99a0e"><h3>とくべつ</h3>'+head('god')+row('god')+'<p class="ucondh">この2つで とどく</p><ul class="ucond"><li>龍神いがいの うたもん '+ALLSP().length+'しゅるいを ぜんぶ たまごから かえす（いま '+godHatchN()+'/'+ALLSP().length+'）</li><li>伝説・ダーク・シークレット '+GMAX().length+'しゅるいを ぜんぶ「きわめた！」にする（月影の黒ヒョウ・はやての大ハヤブサも ふくむ）（いま '+godMaxN()+'/'+GMAX().length+'）</li></ul><p class="ucondh">金色に かがやく すがた</p><ul class="ucond"><li>龍神いがいの 色ちがいを ぜんぶ（'+GOLD_SP().length+'しゅるい）見つける（いま '+GOLD_SP().filter(x=>u.shiny.includes(x)).length+'/'+GOLD_SP().length+'）。あとから そろえても 金色に かわるよ</li></ul></section>'
+    +'<section class="card2 ucol" style="--c:#3b3f9a"><h3>伝説（月と風）</h3>'+['hyou','haya'].map(sp=>head(sp)+row(sp)).join('')+'<ul class="ucond"><li><b>'+(metSp('hyou')?'月影の黒ヒョウ':'？？？（月）')+'</b>：'+(u.given.hyou||hyouN()?'5色ぜんぶで 裏1級（いま '+hyouN()+'/5色）':'まだ 手がかりが ない…')+'</li><li><b>'+(metSp('haya')?'はやての大ハヤブサ':'？？？（風）')+'</b>：'+(u.given.haya||hayaN()?'5色ぜんぶで タイムアタック'+HAYA_T+'秒切り（いま '+hayaN()+'/5色）':'まだ 手がかりが ない…')+'</li></ul></section>'
+    +'<section class="card2 ucol" style="--c:#c99a0e"><h3>とくべつ</h3>'+head('god')+row('god')+'<p class="ucondh">この2つで とどく</p><ul class="ucond"><li>ほかの うたもん '+ALLSP().length+'しゅるいを ぜんぶ たまごから かえす（いま '+godHatchN()+'/'+ALLSP().length+'）</li><li>伝説・ダーク・シークレット '+GMAX().length+'しゅるいを ぜんぶ「きわめた！」にする（月と風の 伝説も ふくむ）（いま '+godMaxN()+'/'+GMAX().length+'）</li></ul><p class="ucondh">金色に かがやく すがた</p><ul class="ucond"><li>ほかの うたもんの 色ちがいを ぜんぶ（'+GOLD_SP().length+'しゅるい）見つける（いま '+GOLD_SP().filter(x=>u.shiny.includes(x)).length+'/'+GOLD_SP().length+'）。あとから そろえても 金色に かわるよ</li></ul></section>'
     +'<section class="card2 ugrow"><h3>うたもんの育ち方</h3><ul class="ucond">'
       +'<li>けいけんちは パートナーに ぜんぶ、なかま（3びきまで）に 半分ずつ 入る</li>'
       +'<li>うたもんの森の「おやつ屋さん」の アメでも 育てられる</li>'
       +'<li>前に さいごの すがたまで 育てた しゅるいは、けいけんちが 2ばい</li>'
-      +'<li>ふつうの うたもんは、青年期で「かわいい」か「かっこいい」を 自分で えらぶ</li>'
+      +'<li>ふつうの うたもんは、青年期で「みやびの道（やさしく うつくしい）」か「いさみの道（つよく りりしい）」を 自分で えらぶ</li>'
       +'<li>成人期（さいごの すがた）に なると「たまごけん」が もらえる</li>'
       +'<li>2だんめ・さいごの すがた・「きわめた！」に なるには、その色の札を <b>5枚・10枚・20枚</b> 覚えて、「しんかテスト」に ぜんぶ 正解する（色のない うたもんは 5色あわせて 30枚・60枚・100枚）</li>'
       +'<li>さいごの すがたの あとは「きずな」を 育てて、ハート5つで「きわめた！」（うたコイン・たまごけん・きらめきのかけら・称号が もらえる）</li>'
       +'<li>たまごが かえるとき、たまに「色ちがい」が 生まれる。伝説・ダーク・シークレットなどは、色ちがいで 生まれなくても「きわめた！」で 色ちがいに 変身できる</li></ul>'
       +'<h4 style="margin-top:12px">ひつような けいけんち</h4><div class="uthrw"><table class="uthr"><thead><tr><th>しゅるい</th><th>生まれる</th><th>2だんめ</th><th>さいご</th><th>きわめた！</th></tr></thead><tbody>'
-      +[['ふつう','g'],['ダーク','d'],['伝説','l'],['シークレット','s'],['鬼神虎・黒ヒョウ・ハヤブサ','o'],['百歌の龍神','z']].map(([n,k])=>'<tr><th>'+n+'</th><td>'+THR[k][1]+'</td><td>'+THR[k][2]+'</td><td>'+THR[k][3]+'</td><td>'+THR[k][3]*2+'</td></tr>').join('')
+      +[['ふつう','g'],['ダーク','d'],['伝説','l'],['シークレット','s'],['伝説（めちゃつよ・月・風）','o'],['とくべつ','z']].map(([n,k])=>'<tr><th>'+n+'</th><td>'+THR[k][1]+'</td><td>'+THR[k][2]+'</td><td>'+THR[k][3]+'</td><td>'+THR[k][3]*2+'</td></tr>').join('')
       +'</tbody></table></div></section>';
 }
-document.addEventListener('click',e=>{ const mc=e.target.closest('#ubook [data-ms],#ubook [data-mf],#ubook [data-mg]'); if(mc){ monCtl(mc); renderUBook(); return; } const z=e.target.closest('[data-zs]'); if(z){ st.zshiny=z.dataset.zs==='1'; save(); renderUBook(); return; } const a=e.target.closest('[data-umact]'); if(a){ um().act=+a.dataset.umact; save(); snd('ok'); renderUBook(); } });
+document.addEventListener('click',e=>{ const mc=e.target.closest('#ubook [data-ms],#ubook [data-mf],#ubook [data-mg]'); if(mc){ monCtl(mc); renderUBook(); return; } const z=e.target.closest('[data-zs]'); if(z){ st.zshiny=z.dataset.zs==='1'; save(); renderUBook(); return; } const a=e.target.closest('[data-umact]'); if(a){ roleMenu(+a.dataset.umact,()=>renderUBook()); } });
 
 /* ---------- パートナー（パートナー席） ---------- */
 const TALK1=['あそぼ！ あそぼ！','ねえねえ、札 めくって〜','もっと おおきく なりたいな','いっしょだと うれしいな','かるたって、まだ ちょっと むずかしいね…','きょうも きてくれた！ わーい！','ころころ〜♪','おなか すいた〜','ねむたい…でも がんばる！'];
@@ -2866,7 +2983,7 @@ function osusume(){ const due=rvDue().length;
   return {ic:'vs',t:'5色ぜんぶ 1級！',s:'対戦で うでだめししよう',go:'vs'}; }
 function osuGo(o){ if(!o) return; if(o.go==='rv') reviewStart(); else if(o.go==='sh') shinkaStart(o.m); else if(o.go==='egg'){ FT='egg'; show('forest'); } else if(o.go==='test') startTest(CM[o.k],false,o.list); else if(o.go==='vs'){ PG='vs'; renderHome(); window.scrollTo(0,0); } }
 function eggCardHTML(){ const orb=st.orb||0, n=Math.min(orb,ORB_EGG), cr=['M50 22 l-6 10 8 6 -5 9','M30 40 l9 4 -3 8 8 5','M70 42 l-8 5 4 7 -7 6','M38 64 l8 -4 5 7 8 -5','M58 70 l-6 -6 7 -6 -4 -8'];
-  return '<button type="button" class="hcard hegg" data-heg><span class="heggi'+(orb>=ORB_EGG?' ready':'')+'"><img src="'+PIC.um+'" alt=""><svg viewBox="0 0 100 100">'+cr.slice(0,n).map(d=>'<path d="'+d+'" fill="none" stroke="#6b4a1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>').join('')+'</svg></span><span class="hegt"><b>つぎの たまご</b><span class="orbdots">'+[0,1,2,3,4].map(i=>'<i class="'+(i<n?'on':'')+'"></i>').join('')+'</span><span class="sub">'+(orb>=ORB_EGG?'うまれそう！ 森で たまごと こうかんしよう':'<span class="orbi"></span>おぼえ玉 '+orb+' / '+ORB_EGG+'　新しい札を あと'+(ORB_EGG-orb)+'枚 覚えよう')+'</span></span></button>'; }
+  return '<button type="button" class="hcard hegg" data-heg><span class="heggi'+(orb>=ORB_EGG?' ready':'')+'"><img src="'+PIC.um+'" alt=""><svg viewBox="0 0 100 100">'+cr.slice(0,n).map(d=>'<path d="'+d+'" fill="none" stroke="#6b4a1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>').join('')+'</svg></span><span class="hegt"><b>おぼえ玉で 新しいたまご</b><span class="orbdots">'+[0,1,2,3,4].map(i=>'<i class="'+(i<n?'on':'')+'"></i>').join('')+'</span><span class="sub">'+(orb>=ORB_EGG?'<span class="orbi"></span>おぼえ玉が '+orb+'こ たまった！ タップして 森で 新しいたまごと こうかんしよう':'<span class="orbi"></span>おぼえ玉 '+orb+' / '+ORB_EGG+'こ。新しい札を あと'+(ORB_EGG-orb)+'枚 覚えると、新しいたまごと こうかんできるよ')+'</span></span></button>'; }
 function barsHTML(){ const k0=mcolK(), order=[k0].concat(COLORS.map(c=>c.k).filter(k=>k!==k0)), due=rvDue().length;
   return '<div class="hcard hbars"><div class="hbh"><b>5色の札</b><span class="sub">いま覚えている札</span>'+(due?'<button type="button" class="hrv" data-hrv>'+icI('fukushu','hrvi')+'ふくしゅう '+due+'枚 ▶</button>':'')+'</div>'
     +order.map(k=>{ const c=CM[k], kn=knownOf(k).length, n=st.m[k].length; return '<button type="button" class="hbar'+(k===k0?' cls':'')+'" data-hbar="'+k+'" style="--c:'+c.c+'"><span class="hbn">'+esc(short(c))+(k===k0?'<em>★クラス</em>':'')+'</span><span class="hbt"><i style="width:'+(kn/20*100)+'%"></i></span><span class="hbc">'+kn+'/20</span><span class="hbk">'+kyuName(n)+'</span></button>'; }).join('')+'</div>'; }
@@ -2887,7 +3004,11 @@ function cpSub(sb,i){ const thr=monThr(sb), nx=sb.s<3?thr[sb.s+1]:(sb.max?null:b
   return '<div class="cpsub n'+(i||0)+'" style="--pc:'+spCol(sb.sp)+'"><span class="plab">なかま</span><img class="'+(shOn(sb)?shc(sb.sp):'')+'" src="'+monImg(sb)+'" alt=""><div class="cpsi"><b>'+(sb.max?'👑':'')+esc(monName(sb))+'</b><small>'+esc(monStage(sb))+(sb.gate?'・'+esc(shMsg(sb)):sb.max?'・きわめた！':nx?'・あと '+(nx-sb.xp):'')+'</small><div class="bar"><i style="width:'+(ratio*100)+'%"></i></div></div>'+(shReady(sb)?'<button type="button" class="btn shb" data-shk="'+um().mons.indexOf(sb)+'">しんか<br>テスト</button>':'')+'</div>'; }
 document.addEventListener('click',e=>{ const b=e.target.closest('[data-pexp]'); if(!b) return; const seat=b.closest('.pseat'); const o=seat.classList.toggle('open'); b.textContent=o?'とじる ▲':'くわしく ▼'; });
 
-function renderPartner(){ seatInto($('#pseat'),true); seatInto($('#pseatU'),false); }
+function renderPartner(){ seatInto($('#pseat'),true); seatInto($('#pseatU'),false); requestAnimationFrame(fitSeat); }
+function fitSeat(){ const ps=$('#pseat'), bar=$('#botBar'); if(!ps) return; ps.style.maxHeight=''; ps.classList.remove('seatscroll'); if(!bar||ps.offsetParent===null) return;
+  const hm=$('#home'), fixedH=hm&&Math.abs(hm.getBoundingClientRect().height-innerHeight)<4&&matchMedia('(min-aspect-ratio:1/1) and (min-width:900px)').matches; if(!fixedH){ const need=bar.offsetHeight+12; if(parseFloat(getComputedStyle(document.body).paddingBottom)<need) document.body.style.paddingBottom=need+'px'; return; }
+  const top=ps.getBoundingClientRect().top, lim=bar.getBoundingClientRect().top-8-top; if(ps.scrollHeight>lim&&lim>160){ ps.style.maxHeight=lim+'px'; ps.classList.add('seatscroll'); } }
+window.addEventListener('resize',()=>requestAnimationFrame(fitSeat));
 function seatInto(box,cp){ if(!box) return; const u=um(), m=actMon();
   if(!m){ box.className='dpanel pseat none'; box.innerHTML='<button type="button" class="ppic" data-bb="forest"><img src="'+UMIMG.mystery+'" alt=""></button><div class="pinfo"><b>パートナーがいないよ</b><span class="sub">うたもんの森で たまごをえらぼう</span><button class="btn fill" type="button" data-bb="forest">たまごをえらぶ</button></div>'; return; }
   const k=SP[m.sp].kind, thr=monThr(m), bondOn=m.s===3, nx=m.s<3?thr[m.s+1]:(m.max?null:bondMax(m)), base=thr[m.s], ratio=nx?Math.min(1,(m.xp-base)/(nx-base)):1;
@@ -2899,7 +3020,7 @@ function seatInto(box,cp){ if(!box) return; const u=um(), m=actMon();
     +(m.pend?'<button class="btn fill" type="button" data-ptap>進化させる！</button>':'')+(m.gate?'<button class="btn fill shbtn" type="button" data-shk="'+u.act+'">'+icI('shinka','shbi')+'しんかテスト</button>':'')
     +(!cp&&m.s>0&&u.shiny.includes(m.sp)&&!m.shiny?'<button class="btn pswap" type="button" data-psv>'+(m.sv?'ふつうの色にもどす':'✦色ちがいで表示する')+'</button>':'')
     +(!cp&&dbl(m)?'<span class="dbl">✦ もう育てたことがある しゅるい：けいけんち2ばい</span>':'')+ogHTML()
-    +(!cp&&u.mons.length>1?'<button class="btn pswap" type="button" data-pswap>パートナー交代（'+u.mons.length+'）</button>':'')+(cp?subMons().map((sb,i)=>cpSub(sb,i)).join(''):'')+(cp?'<button type="button" class="pexp" data-pexp>くわしく ▼</button><div class="cprow">'+(u.mons.length>1?'<button class="btn cpb" type="button" data-pswap>⇄ 交代</button><button class="btn cpb" type="button" data-psub>'+subMons().map(sb=>'<img class="'+(shOn(sb)?shc(sb.sp):'')+'" src="'+monImg(sb)+'" alt="">').join('')+'なかま</button>':'')+'<button class="btn pgo" type="button" data-ht="um">うたもん ▶</button></div>':'')+'</div>'+(cp?'':subHTML()); }
+    +(!cp&&u.mons.length>1?'<button class="btn pswap" type="button" data-pswap>パートナー交代（'+u.mons.length+'）</button>':'')+(cp?'<button type="button" class="pexp" data-pexp>くわしく ▼</button><div class="cprow">'+(u.mons.length>1?'<button class="btn cpb" type="button" data-pswap>⇄ 交代</button><button class="btn cpb" type="button" data-psub>'+subMons().map(sb=>'<img class="'+(shOn(sb)?shc(sb.sp):'')+'" src="'+monImg(sb)+'" alt="">').join('')+'なかま</button>':'')+'<button class="btn pgo" type="button" data-ht="um">うたもん ▶</button></div>':'')+(cp?subMons().map((sb,i)=>cpSub(sb,i)).join(''):'')+'</div>'+(cp?'':subHTML()); }
 function subHTML(){ const u=um(), list=subMons(); if(u.mons.length<2) return '';
   if(!list.length) return '<div class="psub empty"><span class="sub">なかまを えらぶと、けいけんちの半分が なかまにも入るよ（3匹まで）</span><button class="btn" type="button" data-psub>なかまをえらぶ</button></div>';
   const row=sb=>{ const thr=monThr(sb), nx=sb.s<3?thr[sb.s+1]:(sb.max?null:bondMax(sb));
@@ -2922,7 +3043,7 @@ const mCmp=(A,B)=>{ const a=um().mons[A], b=um().mons[B]; if(!!a.max!==!!b.max) 
 const mGrowCmp=(A,B)=>{ const a=um().mons[A], b=um().mons[B]; const ra=(a.max?4:a.s), rb=(b.max?4:b.s); if(ra!==rb) return rb-ra; return b.xp-a.xp; };
 function monCtl(c){ if(c.dataset.ms){ st.mSort=c.dataset.ms; save(); } else if(c.dataset.mf){ st.mFil=c.dataset.mf; save(); } else if(c.dataset.mg){ const k=c.dataset.mg; if(MOPEN.has(k)) MOPEN.delete(k); else MOPEN.add(k); } snd('flip'); }
 function monCard(m,i,ctx){ const u=um(), isA=i===u.act, isS=isSub(i), dis=ctx==='sub'&&isA, on=ctx==='fav'?i===u.fav:ctx==='sub'?isS:isA, hid=m.mys&&m.s===0;
-  const form=!hid&&m.s>=2&&m.br?(m.br==='cute'?'かわいい':'かっこいい'):'';
+  const form=!hid&&m.s>=2&&m.br?(m.br==='cute'?'みやび':'いさみ'):'';
   return '<button type="button" class="swapi'+(on?' on':'')+'" '+(ctx==='ub'?'data-umact':ctx==='fav'?'data-fav':'data-swap')+'="'+i+'"'+(dis?' disabled':'')+' style="--c:'+(hid?'#8a7ab0':spCol(m.sp))+'"><img class="'+(shOn(m)?shc(m.sp):'')+'" src="'+monImg(m)+'" alt=""><b>'+(m.max?'👑':'')+esc(monName(m))+'</b><small>'+(hid?'たまご':(monKind(m)?monKind(m)+' ':'')+esc(monStage(m)))+(form?'・'+form:'')+'</small>'
     +((m.shiny&&!hid)||(m.s>=3&&!m.max)?'<span class="mtags">'+(m.shiny&&!hid?'<i class="tsh">✦色ちがい</i>':'')+(m.s>=3&&!m.max?'<i class="thr">'+'❤'.repeat(hearts(m))+'</i>':'')+'</span>':'')
     +(ctx==='fav'&&i===u.fav?'<em class="fv">★お気に入り</em>':'')+(isA?'<em>パートナー</em>':isS?'<em class="sb">なかま</em>':'')+'</button>'; }
@@ -2936,25 +3057,36 @@ function monListHTML(ctx){ const u=um(), so=st.mSort||'kind', fi=st.mFil||'all';
   let body='';
   if(!idx.length) body='<p class="sub mnone">この色の うたもんは まだいないよ</p>';
   else if(so==='kind'){ const keys=SPORD.concat(['?mys']);
-    body=keys.map(k=>{ const list=idx.filter(i=>mGkey(u.mons[i])===k).sort(mCmp); if(!list.length) return ''; if(list.length===1) return monCard(u.mons[list[0]],list[0],ctx);
+    body=keys.map(k=>{ const list=idx.filter(i=>mGkey(u.mons[i])===k).sort(mCmp); if(!list.length) return ''; if(list.length===1||k==='?mys') return list.map(i=>monCard(u.mons[i],i,ctx)).join('');
       const ms=list.map(i=>u.mons[i]), best=ms[0], open=MOPEN.has(k), sc=ms.filter(m=>m.shiny).length, mc=ms.filter(m=>m.max).length, has=list.some(i=>i===u.act||isSub(i)), col=k==='?mys'?'#8a7ab0':spCol(k);
       return '<button type="button" class="swapi mgrp'+(open?' open':'')+(has?' has':'')+'" data-mg="'+k+'" aria-expanded="'+open+'" style="--c:'+col+'"><span class="mgn">×'+list.length+'</span><img class="'+(k!=='?mys'&&shOn(best)?shc(best.sp):'')+'" src="'+monImg(best)+'" alt=""><b>'+(k==='?mys'?'ひみつのたまご':esc(NM[k].th))+'</b><small>'+list.length+'ひき'+(sc&&k!=='?mys'?'・✦'+sc:'')+(mc?'・👑'+mc:'')+'</small><span class="mgop">'+(open?'▲ とじる':'▼ ひらく')+'</span></button>'
         +(open?'<div class="mgsub" style="--c:'+col+'"><span class="mgh">'+(k==='?mys'?'ひみつのたまご':esc(NM[k].th))+'（'+list.length+'ひき）</span><div class="mgg">'+list.map(i=>monCard(u.mons[i],i,ctx)).join('')+'</div></div>':''); }).join(''); }
   else { const list=idx.slice().sort(so==='grow'?mGrowCmp:(a,b)=>b-a); body=list.map(i=>monCard(u.mons[i],i,ctx)).join(''); }
-  return ctl+pin+'<div class="swapgrid mlist">'+(ctx==='sub'&&!pins.length?'<button type="button" class="swapi on" data-swap="-1"><span class="nosub">なし</span><b>なかまなし</b><small>&nbsp;</small></button>':'')+body+'</div>'+(ctx==='ub'?'<p class="sub">うたもんを タップすると パートナーにできるよ。</p>':''); }
+  return ctl+pin+'<div class="swapgrid mlist">'+(ctx==='sub'&&!pins.length?'<button type="button" class="swapi on" data-swap="-1"><span class="nosub">なし</span><b>なかまなし</b><small>&nbsp;</small></button>':'')+body+'</div>'+(ctx==='ub'?'<p class="sub">うたもんを タップすると、パートナーか なかまに できるよ。</p>':''); }
 
+function setSubs(L){ const u=um(); u.subs=L.filter((i,n,a)=>i!=null&&i>=0&&i!==u.act&&u.mons[i]&&a.indexOf(i)===n).slice(0,SUBMAX); save(); }
+function subReplace(i,after){ const u=um(), m=u.mons[i], L=subIdx();
+  modal('<div class="levelup wide rolebox"><b style="font-size:1.15rem">なかまは 3匹まで</b><span class="sub">'+esc(monName(m))+'と 入れかえる なかまを えらんでね</span><div class="rolerep">'+L.map(j=>{ const x=u.mons[j]; return '<button type="button" class="swapi" data-rep="'+j+'" style="--c:'+spCol(x.sp)+'"><img class="'+(shOn(x)?shc(x.sp):'')+'" src="'+monImg(x)+'" alt=""><b>'+esc(monName(x))+'</b><small>'+esc(monStage(x))+'</small></button>'; }).join('')+'</div><button class="btn" type="button" data-mclose style="width:100%">やめる</button></div>',
+  (e,d)=>{ const b=e.target.closest('[data-rep]'); if(!b) return; const j=+b.dataset.rep; setSubs(L.map(x=>x===j?i:x)); d.remove(); snd('ok'); toast(monName(m)+'が なかまに 入ったよ'); if(after) after(); }); }
+function roleSet(i,role,after){ const u=um(), m=u.mons[i]; if(!m) return;
+  if(role==='act'){ const cur=u.mons[u.act]; const go=()=>{ swapAct(i); setSubs(subIdx()); save(); snd('ok'); renderPartner(); pAct(); pSay('よろしくね！',2200); if(after) after(); };
+    if(cur&&cur.s===3&&!cur.max&&i!==u.act){ modal('<div class="levelup wide"><b>まだ きずなが育っているよ</b><span class="sub">'+esc(monName(cur))+'は、あと '+(bondMax(cur)-cur.xp)+' で「きわめた！」になるよ。こうたいする？（育てたぶんは のこるよ。なかまに すれば、けいけんちの半分が 入りつづけるよ）</span><div class="row2"><button class="btn" type="button" data-yes>こうたいする</button><button class="btn fill" type="button" data-mclose>このまま育てる</button></div></div>',(ev,dd)=>{ if(ev.target.closest('[data-yes]')){ dd.remove(); go(); } }); return; }
+    go(); return; }
+  if(role==='sub'){ if(i===u.act) return; const L=subIdx(); if(L.includes(i)) return; if(L.length>=SUBMAX){ subReplace(i,()=>{ renderPartner(); if(after) after(); }); return; } setSubs(L.concat([i])); snd('ok'); toast(monName(m)+'が なかまに 入ったよ'); renderPartner(); if(after) after(); return; }
+  if(role==='unsub'){ setSubs(subIdx().filter(x=>x!==i)); snd('ok'); renderPartner(); if(after) after(); } }
+function roleMenu(i,after){ const u=um(), m=u.mons[i]; if(!m) return; const isA=i===u.act, isS=isSub(i);
+  modal('<div class="levelup wide rolebox" style="--c:'+(m.mys&&m.s===0?'#8a7ab0':spCol(m.sp))+'"><img class="umbig rolei'+(shOn(m)?' '+shc(m.sp):'')+'" src="'+monImg(m)+'" alt=""><b style="font-size:1.25rem">'+(m.max?'👑':'')+esc(monName(m))+'</b><span class="sub">'+(isA?'いまの パートナーだよ':isS?'いまは なかまだよ':'どうする？')+'</span><div class="rolebtns">'
+    +(isA?'':'<button class="btn fill" type="button" data-ro="act">⭐ パートナーにする<small>けいけんちが ぜんぶ 入る</small></button>')
+    +(isA?'':isS?'<button class="btn" type="button" data-ro="unsub">なかまから はずす</button>':'<button class="btn fill rsub" type="button" data-ro="sub">🤝 なかまにする<small>けいけんちが 半分 入る（3匹まで）</small></button>')
+    +'<button class="btn" type="button" data-mclose>'+(isA?'とじる':'やめる')+'</button></div></div>',
+  (e,d)=>{ const b=e.target.closest('[data-ro]'); if(!b) return; d.remove(); roleSet(i,b.dataset.ro,after); }); }
 function swapAct(i){ const u=um(); const k=u.subs.indexOf(i); if(k>=0){ if(u.act>=0) u.subs[k]=u.act; else u.subs.splice(k,1); } u.act=i; }
 function swapModal(forSub){ const u=um();
-  modal('<div class="levelup wide swapbox"><b style="font-size:1.25rem">'+(forSub?'なかまをえらぶ（<span id="swN">'+subIdx().length+'</span>/3）':'パートナー交代')+'</b><span class="sub">'+(forSub?'タップで なかまに入れる・はずす。3匹まで えらべて、それぞれに けいけんちの半分が入るよ。':'パートナーには、けいけんちが ぜんぶ入るよ。')+'育てたけいけんちは、交代しても そのまま残るよ。</span><div id="swList">'+monListHTML(forSub?'sub':'act')+'</div><button class="btn'+(forSub?' fill':'')+'" type="button" data-mclose style="width:100%">'+(forSub?'これで けってい':'とじる')+'</button></div>',
-  (e,d)=>{ const mc=e.target.closest('[data-ms],[data-mf],[data-mg]'); if(mc){ monCtl(mc); const L=d.querySelector('#swList .mlist'), y=L?L.scrollTop:0; d.querySelector('#swList').innerHTML=monListHTML(forSub?'sub':'act'); const L2=d.querySelector('#swList .mlist'); if(L2) L2.scrollTop=y; return; }
-    const b=e.target.closest('[data-swap]'); if(!b||b.disabled) return; const i=+b.dataset.swap;
-    if(forSub){ let L=subIdx(); if(i<0) L=[]; else if(L.includes(i)) L=L.filter(x=>x!==i); else if(L.length>=SUBMAX){ const n=d.querySelector('.swapbox > .sub'); if(n){ n.textContent='なかまは 3匹まで。だれかを タップして はずしてね'; n.classList.remove('warn'); void n.offsetWidth; n.classList.add('warn'); } snd('ng'); return; } else L=L.concat([i]);
-      u.subs=L; save(); snd('ok'); const Ls=d.querySelector('#swList .mlist'), y=Ls?Ls.scrollTop:0; d.querySelector('#swList').innerHTML=monListHTML('sub'); const L2=d.querySelector('#swList .mlist'); if(L2) L2.scrollTop=y; const nn=d.querySelector('#swN'); if(nn) nn.textContent=subIdx().length; renderPartner(); return; }
-    const cur=u.mons[u.act];
-    const doIt=()=>{ swapAct(i); save(); renderPartner(); pAct(); pSay(forSub?'なかまも いっしょに がんばろう！':'よろしくね！',2200); };
-    if(cur&&cur.s===3&&!cur.max&&i!==u.act){ d.remove(); modal('<div class="levelup wide"><b>まだ きずなが育っているよ</b><span class="sub">'+esc(monName(cur))+'は、あと '+(bondMax(cur)-cur.xp)+' で「きわめた！」になるよ。こうたいする？（育てたぶんは のこるよ）</span><div class="row2"><button class="btn" type="button" data-yes>こうたいする</button><button class="btn fill" type="button" data-mclose>このまま育てる</button></div></div>',(ev,dd)=>{ if(ev.target.closest('[data-yes]')){ dd.remove(); doIt(); snd('ok'); } }); return; }
-    swapAct(i);
-    save(); d.remove(); snd('ok'); renderPartner(); pAct(); pSay(forSub?'なかまも いっしょに がんばろう！':'よろしくね！',2200); }); }
+  const draw=d=>{ const L=d.querySelector('#swList .mlist'), y=L?L.scrollTop:0; d.querySelector('#swList').innerHTML=monListHTML('act'); const L2=d.querySelector('#swList .mlist'); if(L2) L2.scrollTop=y; const nn=d.querySelector('#swN'); if(nn) nn.textContent=subIdx().length; const cl=d.querySelector('[data-subclr]'); if(cl) cl.hidden=!subIdx().length; };
+  modal('<div class="levelup wide swapbox"><b style="font-size:1.25rem">パートナー・なかま</b><span class="sub">うたもんを タップすると「パートナーにする」か「なかまにする」を えらべるよ。パートナーには けいけんちが ぜんぶ、なかま（<span id="swN">'+subIdx().length+'</span>/3）には 半分ずつ 入るよ。育てた けいけんちは、交代しても そのまま 残るよ。</span><div id="swList">'+monListHTML('act')+'</div><div class="row2"><button class="btn" type="button" data-subclr'+(subIdx().length?'':' hidden')+'>なかまを ぜんぶ はずす</button><button class="btn fill" type="button" data-mclose>とじる</button></div></div>',
+  (e,d)=>{ const mc=e.target.closest('[data-ms],[data-mf],[data-mg]'); if(mc){ monCtl(mc); draw(d); return; }
+    if(e.target.closest('[data-subclr]')){ setSubs([]); snd('ok'); renderPartner(); draw(d); return; }
+    const b=e.target.closest('[data-swap]'); if(!b||b.disabled) return; roleMenu(+b.dataset.swap,()=>{ if(document.body.contains(d)) draw(d); renderPartner(); }); }); }
 
 /* ---------- きろく（バックアップ） ---------- */
 const DBN='hyakunin-dojo-db';
@@ -2982,7 +3114,8 @@ function openBackup(){ const p=st.prof||{};
     +'<button class="btn" type="button" data-mclose style="width:100%">とじる</button></div>',
   (e,d)=>{ const b=e.target.closest('[data-bk]'); if(!b) return; st.prof={g:$('#bkG').value.trim(),c:$('#bkC').value.trim(),n:$('#bkN').value.trim()};
     const name=bkName(), blob=bkBlob();
-    if(b.dataset.bk==='share'){ try{ const f=new File([blob],name,{type:'application/json'}); if(navigator.canShare({files:[f]})){ navigator.share({files:[f],title:name}).then(()=>bkDone(d)).catch(()=>{}); return; } }catch(err){} }
+    const dl=()=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },4000); };
+    if(b.dataset.bk==='share'){ let ok=false; try{ const f=new File([blob],name,{type:'application/json'}); if(navigator.share&&navigator.canShare&&navigator.canShare({files:[f]})){ ok=true; navigator.share({files:[f],title:name}).then(()=>bkDone(d)).catch(err=>{ if(err&&err.name==='AbortError') return; dl(); bkDone(d); toast('共有できなかったので、ファイルに 保存したよ'); }); } }catch(err){ ok=false; } if(ok) return; dl(); bkDone(d); toast('共有できなかったので、ファイルに 保存したよ'); return; }
     const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },4000); bkDone(d); });
   const inp=$('#bkFile'); inp.addEventListener('change',()=>{ const f=inp.files&&inp.files[0]; if(!f) return; const r=new FileReader(); r.onload=()=>{ let data=null; try{ data=JSON.parse(r.result); }catch(err){} if(!data||data.app!=='hyakunin-dojo'||!data.st){ toast('このファイルは どうじょうのきろくではありません'); return; }
       if(data.v>=3&&data.sig!==sig(JSON.stringify(data.st))){ toast('このファイルは 書きかえられているので 読み込めません'); return; }
