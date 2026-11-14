@@ -1620,7 +1620,7 @@ rt{font-size:.5em;font-weight:700;letter-spacing:0;line-height:1}
 <!-- テスト -->
 <div id="test" class="play scene" hidden>
   <div class="pbar"><div class="in">
-    <button class="back" type="button" id="tStop">■ おわる</button>
+    <button class="back" type="button" id="tStop">← おわる</button>
     <h2 id="tTitle"></h2>
     <span class="num" id="tNum"></span>
   </div></div>
@@ -2286,7 +2286,6 @@ function rate(v){ const fast0=0; const fast=performance.now()-(T.qt||0)<FAST_MS;
     else toast(v===2?'はやすぎ！ ちゃんと 考えてから「かんぺき」を おそう':'はやすぎ！ ゆっくり 考えよう');
     if(v===2){ T.queue.push(T.queue.shift()); T.shown=false; renderQ(); return; }
     T.noXP=true; } else T.fastN=0;
-  if(v===2&&quizNeeded(T.queue[0])&&ckNgHas(T.queue[0])){ const no=T.queue.shift(); T.rc[1]++; T.miss.push(no); combo=0; snd('flip'); lockMsg('この札は 今日 4択で まちがえたので、明日 また ちょうせんしよう',2600); T.shown=false; renderQ(); return; }
   if(v===2&&quizNeeded(T.queue[0])){ const no=T.queue.shift(); T.rc[2]++; (T.pend=T.pend||[]).push(no); combo++; snd('ok'); T.shown=false; renderQ(); return; } T.qzDone=false; rateNow(v); }
 function startQuiz(no){ const p=P[no], cs=(colorOf(no)||{nos:MIX.nos}).nos.filter(x=>x!==no), pool=shuffle(cs).slice(0,3).concat([no]), opts=shuffle(pool);
   const q=T.ura?p.skana[0]:p.kana[0], ans=n=>T.ura?P[n].kana[0]:P[n].skana[0];
@@ -4149,6 +4148,11 @@ document.addEventListener('click',e=>{ const f=e.target.closest&&e.target.closes
         ura.replaceWith(r); } }
     const n=box.querySelectorAll('.mcard:not(.p8full)').length; box.style.setProperty('--mr',Math.ceil(n/2)+full); }catch(e){} }; }
 try{ renderAny(); }catch(e){}
+
+
+/* ===== patch9：決まり字クイズ中は「← おわる」 ===== */
+{ const _kq=renderKQ; renderKQ=function(){ _kq.apply(this,arguments); const b=$('#kStop'); if(b) b.textContent='← おわる'; }; }
+{ const _ks=renderKStart; renderKStart=function(){ _ks.apply(this,arguments); const b=$('#kStop'); if(b) b.textContent='← もどる'; }; }
 
 })();
 </script>
