@@ -1630,7 +1630,7 @@ rt{font-size:.5em;font-weight:700;letter-spacing:0;line-height:1}
 <!-- タイムアタック -->
 <div id="ta" class="play scene" hidden>
   <div class="pbar"><div class="in">
-    <button class="back" type="button" id="aStop">■ やめる</button>
+    <button class="back" type="button" id="aStop">← おわる</button>
     <h2 id="aTitle"></h2>
     <span class="num" id="aNum"></span>
     <span class="clock" id="aClock">0.0</span>
@@ -2290,12 +2290,12 @@ function rate(v){ const fast0=0; const fast=performance.now()-(T.qt||0)<FAST_MS;
 function startQuiz(no){ const p=P[no], cs=(colorOf(no)||{nos:MIX.nos}).nos.filter(x=>x!==no), pool=shuffle(cs).slice(0,3).concat([no]), opts=shuffle(pool);
   const q=T.ura?p.skana[0]:p.kana[0], ans=n=>T.ura?P[n].kana[0]:P[n].skana[0];
   clearInterval(QZ); let left=100;
-  $('#tStage').innerHTML='<div class="quizbox"><span class="qzlab">たしかめクイズ</span><p class="sub" style="margin:0">あたらしく覚えた札になるよ！ '+(T.ura?'上の句':'下の句')+'のはじめを えらぼう（10びょう）</p><div class="q">'+esc(q)+'</div><div class="qzbar"><i id="qzI" style="width:100%"></i></div>'
+  $('#tStage').innerHTML='<div class="quizbox"><span class="qzlab">たしかめクイズ</span><p class="sub" style="margin:0">あたらしく覚えた札になるよ！ '+(T.ura?'上の句':'下の句')+'のはじめを えらぼう（'+ckSec()+'びょう）</p><div class="q">'+esc(q)+'</div><div class="qzbar"><i id="qzI" style="width:100%"></i></div>'
     +'<div class="opts">'+opts.map(n=>'<button type="button" class="opt" data-qz="'+n+'" data-ok="'+(n===no?1:0)+'">'+esc(ans(n))+'</button>').join('')+'</div></div>';
   const end=ok=>{ clearInterval(QZ); QZ=null; $$('#tStage [data-qz]').forEach(b=>{ b.disabled=true; if(b.dataset.ok==='1') b.classList.add('good'); });
     const m=document.createElement('p'); m.className='qzres '+(ok?'ok':'ng'); m.textContent=ok?'せいかい！ 覚えた札になったよ':'ざんねん… 「自信なし」になるよ。もう一度がんばろう'; $('#tStage .quizbox').appendChild(m);
     snd(ok?'ok':'ng'); setTimeout(()=>{ T.qzDone=ok; T.shown=true; rate(ok?2:1); },ok?700:1300); };
-  QZ=setInterval(()=>{ left--; const i=$('#qzI'); if(i) i.style.width=left+'%'; if(left<=0) end(false); },100);
+  QZ=setInterval(()=>{ left-=10/ckSec(); const i=$('#qzI'); if(i) i.style.width=left+'%'; if(left<=0) end(false); },100);
   $('#tStage').onclick=null;
   $$('#tStage [data-qz]').forEach(b=>b.addEventListener('click',()=>{ if(!QZ) return; if(b.dataset.ok!=='1') b.classList.add('bad'); end(b.dataset.ok==='1'); })); }
 function rateNow(v,no0){
@@ -2961,10 +2961,10 @@ function nextKyu(n){ for(let x=n+1;x<=20;x++) if(kyuNum(x)!==kyuNum(n)) return x
 function qRun(o){ let i=0, t=null; const res=[]; const d=document.createElement('div'); d.className='overlay qrun'; document.body.appendChild(d);
   const opts=no=>{ const c=colorOf(no); return shuffle(shuffle((c?c.nos:MIX.nos).filter(x=>x!==no)).slice(0,3).concat([no])); };
   let quit=false; const next=()=>{ if(quit) return; if(i>=o.nos.length){ clearInterval(t); d.remove(); o.onEnd(res); return; } const no=o.nos[i], p=P[no], op=opts(no); let left=100, done=false;
-    d.innerHTML='<div class="qrbox"><div class="qrh">'+(o.icon?'<span class="qric">'+icI(o.icon)+'</span>':'')+'<b>'+o.title+'</b><span class="qrn">'+(i+1)+' / '+o.nos.length+'</span></div>'+(o.sub?'<span class="sub">'+o.sub+'</span>':'')+'<div class="qrq">'+esc(p.kana.join(' '))+'</div><div class="qzbar"><i style="width:100%"></i></div><p class="sub" style="margin:0">下の句を えらぼう（10びょう）</p><div class="opts">'+op.map(n=>'<button type="button" class="opt" data-q="'+n+'">'+esc(P[n].skana.join(' '))+'</button>').join('')+'</div></div><button type="button" class="qrquit" data-qquit>← おわる</button>';
+    d.innerHTML='<div class="qrbox"><div class="qrh">'+(o.icon?'<span class="qric">'+icI(o.icon)+'</span>':'')+'<b>'+o.title+'</b><span class="qrn">'+(i+1)+' / '+o.nos.length+'</span></div>'+(o.sub?'<span class="sub">'+o.sub+'</span>':'')+'<div class="qrq">'+esc(p.kana.join(' '))+'</div><div class="qzbar"><i style="width:100%"></i></div><p class="sub" style="margin:0">下の句を えらぼう（'+ckSec()+'びょう）</p><div class="opts">'+op.map(n=>'<button type="button" class="opt" data-q="'+n+'">'+esc(P[n].skana.join(' '))+'</button>').join('')+'</div></div><button type="button" class="qrquit" data-qquit>← おわる</button>';
     const bar=d.querySelector('.qzbar i');
     const end=ok=>{ if(done) return; done=true; clearInterval(t); res.push({no,ok}); d.querySelectorAll('[data-q]').forEach(b=>{ b.disabled=true; if(+b.dataset.q===no) b.classList.add('good'); }); snd(ok?'ok':'ng'); setTimeout(()=>{ i++; next(); },ok?650:1600); };
-    clearInterval(t); t=setInterval(()=>{ left-=1; bar.style.width=left+'%'; if(left<=0) end(false); },100);
+    clearInterval(t); t=setInterval(()=>{ left-=10/ckSec(); bar.style.width=Math.max(0,left)+'%'; if(left<=0) end(false); },100);
     d.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>{ if(+b.dataset.q!==no) b.classList.add('bad'); end(+b.dataset.q===no); })); };
   d.addEventListener('click',e=>{ if(!e.target.closest('[data-qquit]')) return; quit=true; clearInterval(t); d.remove(); snd('flip'); if(o.partial&&res.length) o.onEnd(res); else toast(o.partial?'ふくしゅうを おわったよ':o.title+'を やめたよ。また ちょうせんしてね'); });
   next(); }
@@ -3258,7 +3258,7 @@ function openSettings(){
     +'<button class="ghost" type="button" data-s="file">ファイルで 保存・読みこみ（先生）</button>'
     +'<button class="ghost" type="button" data-s="chpw">先生の4けたの数字を変える</button>'
     +'<button class="ghost" type="button" data-s="tlim">1日の ごほうびタイム（いま '+(tlimMin()?tlimMin()+'分':'せいげん なし')+'・きょう '+Math.floor((td().ps||0)/60)+'分 あそんだ）</button>'
-    +'<button class="ghost" type="button" data-s="p4demo">演出の見本（記録は かわりません）</button>'+'<button class="ghost" type="button" data-s="cksec">たしかめの4択の時間（いま 1問'+ckSec()+'秒）</button>'+'<button class="ghost" type="button" data-s="egg">伝説・ダークのたまごの タイム条件（いま 伝説'+legT()+'秒・ダーク'+darkT()+'秒）</button>'
+    +'<button class="ghost" type="button" data-s="p4demo">演出の見本（記録は かわりません）</button>'+'<button class="ghost" type="button" data-s="cksec">4択の時間（いま 1問'+ckSec()+'秒）</button>'+'<button class="ghost" type="button" data-s="egg">伝説・ダークのたまごの タイム条件（いま 伝説'+legT()+'秒・ダーク'+darkT()+'秒）</button>'
     
     +'<label class="restset"><input type="checkbox" id="restChk"'+(st.restOff?'':' checked')+'> 20分ごとに「目を休めよう」を出す</label>'
     +'<hr class="hr"><button class="ghost" type="button" data-s="reset" style="color:#b5361f;border-color:#b5361f">ぜんぶの記録を消す</button>'
@@ -3274,8 +3274,8 @@ function openSettings(){
       const row=(key,cur)=>'<div class="mcolrow" style="grid-template-columns:repeat(6,1fr)">'+opts.map(o=>'<button type="button" class="mcolb'+(o===cur?' on':'')+'" data-tk="'+key+'" data-tv="'+o+'" style="--c:var(--accent)">'+o+'秒</button>').join('')+'</div>';
       const draw=()=>'<div class="levelup wide"><b>たまごのタイム条件</b><span class="sub">表のタイムアタックで、この秒数を切ると たまごがとどきます（裏級の条件もいっしょに必要）。</span><b>伝説（裏1級といっしょ）</b>'+row('legT',legT())+'<b>ダーク（裏6級といっしょ）</b>'+row('darkT',darkT())+'<button class="btn" type="button" data-mclose style="width:100%">とじる</button></div>';
       const md=modal(draw(),(ev,dd)=>{ const b=ev.target.closest('[data-tk]'); if(!b) return; st[b.dataset.tk]=+b.dataset.tv; save(); dd.innerHTML=draw(); checkEggs(); }); }); }
-    if(k==='cksec'){ d.remove(); askTeacher('たしかめの4択の時間を変えます',()=>{ const opts=[5,6,7,8,10];
-      const draw=()=>'<div class="levelup wide"><b>たしかめの4択の時間</b><span class="sub">テストのあとの4択（たしかめタイム）で、1問に つかえる時間です。時間切れは まちがいに なります。</span><div class="mcolrow" style="grid-template-columns:repeat(5,1fr)">'+opts.map(o=>'<button type="button" class="mcolb'+(o===ckSec()?' on':'')+'" data-cks="'+o+'" style="--c:var(--accent)">'+o+'秒</button>').join('')+'</div><button class="btn" type="button" data-mclose style="width:100%">とじる</button></div>';
+    if(k==='cksec'){ d.remove(); askTeacher('4択の時間を変えます',()=>{ const opts=[5,6,7,8,10];
+      const draw=()=>'<div class="levelup wide"><b>4択の時間</b><span class="sub">ぜんぶの4択（たしかめ・ふくしゅう・しんかテスト・タイムアタック・決まり字クイズ）で、1問に つかえる時間です。時間切れは まちがいに なります。</span><div class="mcolrow" style="grid-template-columns:repeat(5,1fr)">'+opts.map(o=>'<button type="button" class="mcolb'+(o===ckSec()?' on':'')+'" data-cks="'+o+'" style="--c:var(--accent)">'+o+'秒</button>').join('')+'</div><button class="btn" type="button" data-mclose style="width:100%">とじる</button></div>';
       modal(draw(),(ev,dd)=>{ const b=ev.target.closest('[data-cks]'); if(!b) return; st.ckSec=+b.dataset.cks; save(); dd.innerHTML=draw(); }); }); }
     if(k==='tlim'){ d.remove(); askTeacher('1日の ごほうびタイムを 変えます',()=>{ const opts=[[0,'なし'],[15,'15分'],[30,'30分'],[45,'45分'],[60,'60分'],[90,'90分']];
       const draw=()=>'<div class="levelup wide"><b>1日の ごほうびタイム</b><span class="sub">実際に あそんでいる時間だけを 数えます（ホーム画面にもどっている時や、1分以上 さわっていない時は 数えません）。時間になると、いまのゲームが終わったあと、けいけんち・うたコイン・ミッションが その日は おやすみになります。練習や テストは つづけられます。</span><div class="mcolrow" style="grid-template-columns:repeat(3,1fr)">'+opts.map(([v,l])=>'<button type="button" class="mcolb'+(v===tlimMin()?' on':'')+'" data-tl="'+v+'" style="--c:var(--accent)">'+l+'</button>').join('')+'</div><span class="sub">きょう あそんだ時間：'+Math.floor((td().ps||0)/60)+'分'+(td().tlock?'（ごほうび おやすみ中）':'')+'</span><button class="btn" type="button" data-tlreset style="width:100%">きょうの時間を 0にもどす</button><button class="btn" type="button" data-mclose style="width:100%">とじる</button></div>';
@@ -4251,6 +4251,21 @@ favModal=function(){ const u=um(); let sh=!!(st.favK&&st.favK.sh);
     if(t.closest('[data-p11clr]')){ st.favK=null; u.fav=null; done(d); } }); };
 try{ renderAny(); }catch(e){}
 
+
+/* ===== patch12：タイムアタック・決まり字クイズも 1問 ckSec()秒（時間切れは ペナルティで 次へ） ===== */
+let P12T=null;
+function p12Bar(sel){ const st0=$(sel); if(!st0) return; const b=document.createElement('div'); b.className='qzbar p12bar'; b.innerHTML='<i style="animation-duration:'+ckSec()+'s"></i>'; const k=st0.querySelector('.karuta'); if(k) k.after(b); else st0.prepend(b); }
+{ const _q=renderTAQ; renderTAQ=function(){ _q.apply(this,arguments); clearTimeout(P12T); if(!A||!A.running) return; const idx=A.i; p12Bar('#aStage');
+    P12T=setTimeout(()=>{ if(!A||!A.running||A.i!==idx) return; const no=A.deck[idx]; if(!A.wrong) onAnswer(no,false); A.pen+=5; A.wrong=true; combo=0; snd('ng');
+      $$('#aStage [data-opt]').forEach(b=>{ b.disabled=true; if(b.dataset.ok==='1') b.classList.add('good'); }); const p=document.createElement('p'); p.className='sub p12to'; p.textContent='時間切れ！ ＋5秒'; $('#aStage').appendChild(p);
+      setTimeout(()=>{ if(!A||!A.running||A.i!==idx) return; A.i++; if(A.i>=20) finishTA(); else renderTAQ(); },700); },ckSec()*1000); }; }
+{ const _k=renderKQ; renderKQ=function(){ _k.apply(this,arguments); clearTimeout(P12T); if(!K||!K.running) return; const idx=K.i; p12Bar('#kStage');
+    P12T=setTimeout(()=>{ if(!K||!K.running||K.i!==idx) return; if(!K.wrong) K.miss++; K.wrong=true; K.pen+=3; snd('ng');
+      $$('#kStage [data-kopt]').forEach(b=>{ b.disabled=true; if(b.dataset.ok==='1') b.classList.add('good'); }); const p=document.createElement('p'); p.className='sub p12to'; p.textContent='時間切れ！ ＋3秒'; $('#kStage').appendChild(p);
+      setTimeout(()=>{ if(!K||!K.running||K.i!==idx) return; K.i++; if(K.i>=K.deck.length) finishK(); else renderKQ(); },700); },ckSec()*1000); }; }
+{ const _sc=stopClock; stopClock=function(){ clearTimeout(P12T); return _sc.apply(this,arguments); }; }
+{ const _ks=kStopClock; kStopClock=function(){ clearTimeout(P12T); return _ks.apply(this,arguments); }; }
+
 })();
 </script>
 
@@ -4855,5 +4870,12 @@ img.shiny[data-p7="1"],img.goldsh[data-p7="1"]{filter:drop-shadow(0 0 6px rgba(2
 .p11f img{width:68px;height:68px;object-fit:contain}
 .p11f small{font-size:.66rem;font-weight:800;line-height:1.2;text-align:center}
 .p11f.on{border-color:#c99a0e;box-shadow:0 0 0 3px #ffd54a;background:#fff3c4}
+</style>
+<style id="p12dojo">
+/* ===== patch12 ===== */
+.p12bar{width:100%;max-width:640px;margin:6px auto 0}
+.p12bar i{display:block;width:100%;height:100%;animation:p12bar linear forwards;transform-origin:left}
+@keyframes p12bar{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+.p12to{color:#a12a1f!important;font-weight:900}
 </style>
 </body></html>
